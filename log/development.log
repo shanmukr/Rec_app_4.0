@@ -1,0 +1,349 @@
+Started GET "/" for 127.0.0.1 at 2017-10-13 09:47:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (23.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (64.5ms)
+Started GET "/" for 127.0.0.1 at 2017-10-13 09:47:41 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Started GET "/" for 127.0.0.1 at 2017-10-13 09:48:19 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  Rendered shared/_header.html.erb (110.7ms)
+  Rendered shared/_header.html.erb (23.1ms)
+  Rendered shared/_header.html.erb (8.8ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 21970ms (Views: 21939.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 65410ms (Views: 65012.1ms | ActiveRecord: 0.0ms)
+
+
+  Rendered shared/_footer.html.erb (1.7ms)
+Completed 200 OK in 59525ms (Views: 59519.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/emp_validation" for 127.0.0.1 at 2017-10-13 09:49:13 +0530
+Processing by HomeController#emp_validation as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8i9s+BxWtKhs+opJmna1uWGziudvzawvxNdFlQX9YKzB8taoF2SWUnmWPaS6sykcYstsZWldqsZRVXqvg63vog==", "emp_name"=>"alokk", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`login` = 'alokk' LIMIT 1[0m
+Redirected to http://localhost:3000/resumes/forwarded
+Completed 302 Found in 361ms (ActiveRecord: 35.4ms)
+
+
+Started GET "/resumes/forwarded" for 127.0.0.1 at 2017-10-13 09:49:14 +0530
+Processing by ResumesController#forwarded as HTML
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`login` = 'alokk' LIMIT 1[0m
+  [1m[36mForward Load (0.6ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE (forwarded_to = 1) AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mResume Load (0.4ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 8 LIMIT 1[0m
+  [1m[36mResume Load (0.9ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 14 LIMIT 1[0m
+  [1m[36mResume Load (0.3ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 26 LIMIT 1[0m
+  [1m[36mResume Load (0.3ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 11 LIMIT 1[0m
+  Rendering resumes/_resume_show.html.erb within layouts/application
+  [1m[36mForward Load (0.6ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 8 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (19.6ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 31[0m
+  [1m[36mForward Load (0.8ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 14 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (0.8ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 43[0m
+  [1m[36mForward Load (0.5ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 26 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (0.8ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 54[0m
+  [1m[36mRequirement Load (0.6ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 56[0m
+  [1m[36mForward Load (0.7ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 11 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (0.9ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 57[0m
+  Rendered resumes/_resume_show.html.erb within layouts/application (215.9ms)
+  Rendered shared/_header.html.erb (17.1ms)
+  Rendered shared/_footer.html.erb (3.3ms)
+Completed 200 OK in 2629ms (Views: 2305.9ms | ActiveRecord: 85.9ms)
+
+
+Started POST "/home/emp_validation" for 127.0.0.1 at 2017-10-13 09:51:19 +0530
+Processing by HomeController#emp_validation as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dUOMlwVAoeQgFw6mUoCI3IoutXpU4b8vFLm0PSRDcgErqBpOIihe1BwwznnK8RrHYq8Bwidu3TJX1HNYQPyWAA==", "emp_name"=>"shanmukr.sw@gmail.com", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`login` = 'shanmukr.sw@gmail.com' LIMIT 1[0m
+No template found for HomeController#emp_validation, rendering head :no_content
+Completed 204 No Content in 396ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/requirements/new" for 127.0.0.1 at 2017-10-13 09:55:12 +0530
+Processing by RequirementsController#new as HTML
+  Rendering requirements/new.html.erb within layouts/application
+  [1m[36mDesignation Load (34.9ms)[0m  [1m[34mSELECT `designations`.* FROM `designations`[0m
+  [1m[36mGroup Load (20.1ms)[0m  [1m[34mSELECT `groups`.* FROM `groups`[0m
+  [1m[36mAccount Load (26.7ms)[0m  [1m[34mSELECT `accounts`.* FROM `accounts`[0m
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT `employees`.* FROM `employees`[0m
+  Rendered requirements/_common_requirements_form.html.erb (175.4ms)
+  Rendered requirements/new.html.erb within layouts/application (228.8ms)
+  Rendered shared/_header.html.erb (7.2ms)
+  Rendered shared/_footer.html.erb (1.8ms)
+Completed 200 OK in 2194ms (Views: 1739.5ms | ActiveRecord: 88.1ms)
+
+
+Started GET "/employees" for 127.0.0.1 at 2017-10-13 09:56:27 +0530
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT `employees`.* FROM `employees` WHERE `employees`.`employee_status` = 'ACTIVE' ORDER BY `employees`.`name` ASC[0m
+  Rendered employees/index.html.erb within layouts/application (6.3ms)
+  Rendered shared/_header.html.erb (12.9ms)
+  Rendered shared/_footer.html.erb (1.7ms)
+Completed 200 OK in 4702ms (Views: 4699.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/employees/login_to_selected_employee?login=subha" for 127.0.0.1 at 2017-10-13 09:56:47 +0530
+Processing by EmployeesController#login_to_selected_employee as HTML
+  Parameters: {"login"=>"subha"}
+  Rendering resumes/index.html.erb within layouts/application
+  Rendered resumes/index.html.erb within layouts/application (0.5ms)
+  Rendered shared/_header.html.erb (10.0ms)
+  Rendered shared/_footer.html.erb (2.7ms)
+Completed 200 OK in 4029ms (Views: 4024.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees/login_to_selected_employee?login=subha" for 127.0.0.1 at 2017-10-13 09:56:56 +0530
+Processing by EmployeesController#login_to_selected_employee as HTML
+  Parameters: {"login"=>"subha"}
+  Rendering resumes/index.html.erb within layouts/application
+  Rendered resumes/index.html.erb within layouts/application (0.6ms)
+  Rendered shared/_header.html.erb (58.4ms)
+  Rendered shared/_footer.html.erb (3.4ms)
+Completed 200 OK in 3155ms (Views: 3153.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2017-10-13 09:57:05 +0530
+Processing by HomeController#logout as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  Rendered shared/_header.html.erb (8.0ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 2056ms (Views: 2055.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/emp_validation" for 127.0.0.1 at 2017-10-13 09:57:11 +0530
+Processing by HomeController#emp_validation as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2P7W/03poH4vx9X85h7tUSHZLNrxzmDa6oH2HoG7cXbrI2yvRtuChDqrYhHG23H0IqHKWPdeZjN/A8kkB+v+eA==", "emp_name"=>"subha", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`login` = 'subha' LIMIT 1[0m
+Redirected to http://localhost:3000/resumes/resumes_new
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/resumes/resumes_new" for 127.0.0.1 at 2017-10-13 09:57:11 +0530
+Processing by ResumesController#resumes_new as HTML
+  Rendering resumes/_resume_show.html.erb within layouts/application
+  [1m[35m (15.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mResume Load (1.2ms)[0m  [1m[34mSELECT `resumes`.* FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = '' ORDER BY name ASC[0m
+  Rendered resumes/_resume_show.html.erb within layouts/application (44.6ms)
+  Rendered shared/_header.html.erb (8.0ms)
+  Rendered shared/_footer.html.erb (2.2ms)
+Completed 200 OK in 3452ms (Views: 3434.3ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/resumes/resumes_new" for 127.0.0.1 at 2017-10-13 09:57:31 +0530
+Processing by ResumesController#resumes_new as HTML
+  Rendering resumes/_resume_show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mResume Load (0.2ms)[0m  [1m[34mSELECT `resumes`.* FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = '' ORDER BY name ASC[0m
+  Rendered resumes/_resume_show.html.erb within layouts/application (19.4ms)
+  Rendered shared/_header.html.erb (13.0ms)
+  Rendered shared/_footer.html.erb (2.8ms)
+Completed 200 OK in 3106ms (Views: 3104.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/resumes/show_reqs?id=12" for 127.0.0.1 at 2017-10-13 09:58:09 +0530
+Processing by ResumesController#show_reqs as JS
+  Parameters: {"id"=>"12"}
+  Rendering resumes/show_reqs.js.erb
+  [1m[36mRequirement Load (0.8ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` WHERE `requirements`.`status` = 'OPEN'[0m
+  Rendered resumes/_show_reqs.html.erb (9.5ms)
+  Rendered resumes/show_reqs.js.erb (187.2ms)
+Completed 200 OK in 318ms (Views: 261.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/resumes/resumes_new" for 127.0.0.1 at 2017-10-13 09:58:18 +0530
+Processing by ResumesController#resumes_new as HTML
+  Rendering resumes/_resume_show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mResume Load (0.2ms)[0m  [1m[34mSELECT `resumes`.* FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = '' ORDER BY name ASC[0m
+  Rendered resumes/_resume_show.html.erb within layouts/application (22.1ms)
+  Rendered shared/_header.html.erb (10.1ms)
+  Rendered shared/_footer.html.erb (2.3ms)
+Completed 200 OK in 3251ms (Views: 3249.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/home/logout" for 127.0.0.1 at 2017-10-13 09:59:44 +0530
+Processing by HomeController#logout as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+  Rendered shared/_header.html.erb (25.4ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 5887ms (Views: 5885.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/emp_validation" for 127.0.0.1 at 2017-10-13 09:59:53 +0530
+Processing by HomeController#emp_validation as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjOe+taAQPpTSTzo08G1cVUZnNmJA+vULDEvcp+S3ka17iSq3bJiAEYliwXzBCnUVmF6W4+T7T25sxBIGcJRSA==", "emp_name"=>"alokk", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`login` = 'alokk' LIMIT 1[0m
+Redirected to http://localhost:3000/resumes/forwarded
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/resumes/forwarded" for 127.0.0.1 at 2017-10-13 09:59:53 +0530
+Processing by ResumesController#forwarded as HTML
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`login` = 'alokk' LIMIT 1[0m
+  [1m[36mForward Load (0.1ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE (forwarded_to = 1) AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mResume Load (0.1ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 8 LIMIT 1[0m
+  [1m[36mResume Load (0.1ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 14 LIMIT 1[0m
+  [1m[36mResume Load (0.1ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 26 LIMIT 1[0m
+  [1m[36mResume Load (0.1ms)[0m  [1m[34mSELECT  `resumes`.* FROM `resumes` WHERE `resumes`.`id` = 11 LIMIT 1[0m
+  Rendering resumes/_resume_show.html.erb within layouts/application
+  [1m[36mForward Load (0.3ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 8 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (0.2ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 31[0m
+  [1m[36mForward Load (0.2ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 14 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (0.2ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 43[0m
+  [1m[36mForward Load (1.7ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 26 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (0.3ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 54[0m
+  [1m[36mRequirement Load (0.1ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 56[0m
+  [1m[36mForward Load (0.2ms)[0m  [1m[34mSELECT `forwards`.* FROM `forwards` WHERE `forwards`.`resume_id` = 11 AND `forwards`.`status` = 'FORWARDED'[0m
+  [1m[36mRequirement Load (0.1ms)[0m  [1m[34mSELECT `requirements`.* FROM `requirements` INNER JOIN `forwards_requirements` ON `requirements`.`id` = `forwards_requirements`.`requirement_id` WHERE `forwards_requirements`.`forward_id` = 57[0m
+  Rendered resumes/_resume_show.html.erb within layouts/application (28.9ms)
+  Rendered shared/_header.html.erb (14.8ms)
+  Rendered shared/_footer.html.erb (2.2ms)
+Completed 200 OK in 3720ms (Views: 3712.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-13 10:01:51 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+  Rendered shared/_header.html.erb (12.7ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 2129ms (Views: 2126.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/home/emp_validation" for 127.0.0.1 at 2017-10-13 10:02:02 +0530
+Processing by HomeController#emp_validation as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8qdrdmds4hac0HDPl3ZTbSSkJONN0OMNTLy7Ac08D4GsTP2vQAQdJqD3sBAPB8F2zCWQWz5fgRAP0XxkqYPrgA==", "emp_name"=>"subha", "password"=>"[FILTERED]", "commit"=>"login"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  `employees`.* FROM `employees` WHERE `employees`.`login` = 'subha' LIMIT 1[0m
+Redirected to http://localhost:3000/resumes/resumes_new
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/resumes/resumes_new" for 127.0.0.1 at 2017-10-13 10:02:03 +0530
+Processing by ResumesController#resumes_new as HTML
+  Rendering resumes/_resume_show.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = ''[0m  [["nreq_matches", 0], ["nforwards", 0], ["status", ""]]
+  [1m[36mResume Load (0.1ms)[0m  [1m[34mSELECT `resumes`.* FROM `resumes` WHERE `resumes`.`nreq_matches` = 0 AND `resumes`.`nforwards` = 0 AND `resumes`.`status` = '' ORDER BY name ASC[0m
+  Rendered resumes/_resume_show.html.erb within layouts/application (18.1ms)
+  Rendered shared/_header.html.erb (10.2ms)
+  Rendered shared/_footer.html.erb (1.8ms)
+Completed 200 OK in 2870ms (Views: 2868.4ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (196.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (76.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('856799786584500570', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAgencies (20170210070323)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170210070323')[0m
+  [1m[35m (38.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRequirements (20170214095849)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170214095849')[0m
+  [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAccounts (20170216062348)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062348')[0m
+  [1m[35m (31.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20170216062425)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062425')[0m
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEmailers (20170216062438)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062438')[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateFeedbacks (20170216062449)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062449')[0m
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateForwards (20170216062455)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062455')[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateInterviews (20170216062516)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062516')[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20170216062519)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062519')[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReqMatches (20170216062528)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062528')[0m
+  [1m[35m (31.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSessions (20170216062549)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062549')[0m
+  [1m[35m (53.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUniqids (20170216062555)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170216062555')[0m
+  [1m[35m (41.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDesignations (20170222092655)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170222092655')[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGroups (20170223071622)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170223071622')[0m
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePortals (20170227052237)
+  [1m[35m (99.7ms)[0m  [1m[35mCREATE TABLE `portals` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170227052237')[0m
+  [1m[35m (42.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEmployees (20170315054456)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170315054456')[0m
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateResumes (20170324070522)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170324070522')[0m
+  [1m[35m (41.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-10-18 13:48:15', '2017-10-18 13:48:15')[0m
+  [1m[35m (43.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('856799786584500570')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `portals`[0m
+Started GET "/" for 127.0.0.1 at 2017-10-18 19:19:05 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (9.3ms)
+  Rendered shared/_header.html.erb (3.0ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 16251ms (Views: 16205.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-18 19:19:39 +0530
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  Rendered shared/_header.html.erb (2.5ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 389ms (Views: 388.2ms | ActiveRecord: 0.0ms)
+
+
